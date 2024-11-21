@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+/* You can add global styles to this file, and also import other style files */
+$primary:#241641;
+$secondary:#2A2A2E;
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+*{
+  padding:0px;
+  margin:0px;
+  box-sizing: border-box;
+  font-family: Inter;
+  color: var(--color-font);
+  -webkit-tap-highlight-color: transparent;
+}
