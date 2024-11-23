@@ -22,7 +22,7 @@
         <div class="task-container" *ngIf="tasks.length > 0">
             <div class="task-information text-white bg-primary" *ngFor="let task of tasks">
                 <div class="date-container  text-white">
-                    <button type="button" (click)="isCheck(task)">
+                    <button type="button" (click)="toggleCheck(task)">
                         <div class="caja position-relative">
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16"
                                  class="bi bi-square">

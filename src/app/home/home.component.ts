@@ -1,61 +1,32 @@
-import { Component } from '@angular/core';
-import{Task} from "../services/interfaces/task"
+import {Component} from '@angular/core';
+import {Task} from "../services/interfaces/task"
 import {Router} from "@angular/router";
+import {NewTaskCreatorService} from "../services/forTasks/new-task-creator.service";
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrl: './home.component.scss'
+    selector: 'app-home',
+    templateUrl: './home.component.html',
+    styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+    tasks: Task[] = [];
 
-  constructor(private router:Router){}
-
-  isCheck(task: Task) {
-    task.checkDefaultStatus = !task.checkDefaultStatus;
-  }
-
-  tasks:Task[]=[
-    {
-      id:1,
-      weekDay:"MON",
-      day:22,
-      month:"NOV",
-      time:"15:35",
-      taskName:"Ir a comer con Jon",
-      checkDefaultStatus: false,
-    },
-    {
-      id:2,
-      weekDay:"TUE",
-      day:21,
-      month:"NOV",
-      time:"01:05",
-      taskName:"Recoger a Aldo del aeropuerto",
-      checkDefaultStatus: false,
-    },
-    {
-      id:3,
-      weekDay:"WED",
-      day:23,
-      month:"NOV",
-      time:"15:30",
-      taskName:"Cita con el dentista",
-      checkDefaultStatus: false,
-    },
-    {
-      id:4,
-      weekDay:"THU",
-      day:24,
-      month:"NOV",
-      time:"04:08",
-      taskName:"Café con Maritza",
-      checkDefaultStatus: false,
+    constructor(
+        private router: Router,
+        private newTaskCreatorService: NewTaskCreatorService
+    ) {
     }
 
-  ]
+    ngOnInit(): void {
+        this.tasks = this.newTaskCreatorService.getTasks();
+    }
 
-  navegationBetweenComponents(){
-    this.router.navigate(['/create-task']);
-  }
+    toggleCheck(task: Task) {
+        task.checkDefaultStatus = !task.checkDefaultStatus;
+    }
+
+    navegationBetweenComponents() {
+        this.router.navigate(['/create-task']);
+    }
+
 }

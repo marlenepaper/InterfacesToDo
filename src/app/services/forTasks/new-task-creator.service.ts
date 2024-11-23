@@ -1,0 +1,38 @@
+import { Injectable } from '@angular/core';
+import {Task} from "../interfaces/task";
+import {NewTask} from "../interfaces/new-task";
+
+@Injectable({
+  providedIn: 'root'
+})
+export class NewTaskCreatorService {
+
+  tasks: Task[] = [];
+
+  constructor() { }
+
+  addNewTask(newTask: NewTask): void {
+    const date = new Date(newTask.dueDate);
+    const task: Task = {
+      id: this.tasks.length + 1,
+      weekDay: date.toLocaleString('en-US', { weekday: 'short' }).toUpperCase(),
+      day: date.getDate(),
+      month: date.toLocaleString('en-US', { month: 'short' }).toUpperCase(),
+      time: newTask.time,
+      taskName: newTask.taskName,
+      checkDefaultStatus: newTask.checkDefaultStatus,
+    };
+    this.tasks.push(task);
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
+  }
+
+  getTasks(): Task[] {
+    const savedTasks = localStorage.getItem('tasks');
+    if (savedTasks) {
+      this.tasks = JSON.parse(savedTasks);
+    }
+    return this.tasks;
+  }
+
+
+}
