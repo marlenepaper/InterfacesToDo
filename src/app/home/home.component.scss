@@ -96,6 +96,16 @@ section {
             padding: 0.3rem 0.5rem;
             font-size: 1.2rem;
             left: 9%;
+
+            .caja{
+              .palomita{
+                top:2px;
+                left:-2px;
+                scale:0.7;
+              }
+            }
+
+
           }
 
           .dateContainer {
@@ -128,9 +138,7 @@ section {
         }
       }
     }
-
   }
-
 }
 
 

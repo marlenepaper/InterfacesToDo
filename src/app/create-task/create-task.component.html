@@ -1,6 +1,6 @@
 <section class="text-white">
     <header class="d-flex flex-row align-items-center justify-content-start">
-        <button class="btn bg-transparent border-0 text-white fs-1" type="button">
+        <button class="btn bg-transparent border-0 text-white fs-1" type="button" (click)="navegationBetweenComponents()">
             <i class="bi bi-arrow-left-short"></i>
         </button>
         <p class="mb-0">Create Task</p>
@@ -21,7 +21,7 @@
                     <input type="time" placeholder="00:00">
                 </div>
             </div>
-            <button type="submit" class=" w-100 text-white ">Save</button>
+            <button type="submit" class=" w-100 text-white" (click)="onSubmit()">Save</button>
         </form>
     </div>
 </section>

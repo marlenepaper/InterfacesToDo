@@ -6,13 +6,9 @@ import {CreateTaskComponent} from "./create-task/create-task.component";
 
 const routes: Routes = [
     {path: "", component: LoginComponent},
-    {path: "register", component: LoginComponent},
     {path: "home", component: HomeComponent},
-    {path: "createTask", component: CreateTaskComponent},
-    {
-        path: "**",
-        component: LoginComponent,
-    },
+    {path: "create-task", component: CreateTaskComponent},
+    { path: "**", component: LoginComponent },
 ];
 
 @NgModule({

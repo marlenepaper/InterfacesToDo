@@ -5,4 +5,5 @@ export interface Task{
    month:string;
    time:string;
    taskName:string;
+   checkDefaultStatus: boolean;
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import{Task} from "../services/interfaces/task"
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,12 @@ import{Task} from "../services/interfaces/task"
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
+
+  constructor(private router:Router){}
+
+  isCheck(task: Task) {
+    task.checkDefaultStatus = !task.checkDefaultStatus;
+  }
 
   tasks:Task[]=[
     {
@@ -16,6 +23,7 @@ export class HomeComponent {
       month:"NOV",
       time:"15:35",
       taskName:"Ir a comer con Jon",
+      checkDefaultStatus: false,
     },
     {
       id:2,
@@ -24,6 +32,7 @@ export class HomeComponent {
       month:"NOV",
       time:"01:05",
       taskName:"Recoger a Aldo del aeropuerto",
+      checkDefaultStatus: false,
     },
     {
       id:3,
@@ -32,6 +41,7 @@ export class HomeComponent {
       month:"NOV",
       time:"15:30",
       taskName:"Cita con el dentista",
+      checkDefaultStatus: false,
     },
     {
       id:4,
@@ -40,6 +50,12 @@ export class HomeComponent {
       month:"NOV",
       time:"04:08",
       taskName:"Café con Maritza",
+      checkDefaultStatus: false,
     }
+
   ]
+
+  navegationBetweenComponents(){
+    this.router.navigate(['/create-task']);
+  }
 }
