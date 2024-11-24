@@ -1,0 +1,13 @@
+<section>
+    <div class="content">
+        <button class="close" type="button" (click)="setModalVisibility()"><i class="bi bi-x"></i></button>
+        <p>! Delete Task</p>
+        <p>You´re going this task:
+        <p>{{task?.taskName}}</p>
+        <p>Are you sure?</p>
+        <div>
+            <button type="button" (click)="setModalVisibility()">Cancel</button>
+            <button type="button">Delete</button>
+        </div>
+    </div>
+</section>

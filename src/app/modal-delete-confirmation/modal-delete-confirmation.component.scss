@@ -1,0 +1,49 @@
+section{
+  position:fixed;
+  top:0;
+  left:0;
+  background:rgba(0,0,0,30%);
+  z-index:999;
+  width:100%;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  .content{
+    background:white;
+    width:20%;
+    padding:2rem;
+    border-radius:2rem;
+    position:relative;
+
+    .close{
+      background:none;
+      border-style:none;
+      position:absolute;
+      right:2rem;
+      top:1.5rem;
+    }
+    button:hover {
+      scale: 0.98;
+      opacity: 0.98;
+    }
+    div{
+      display:flex;
+      gap:1rem;
+      justify-content: center;
+
+      button{
+        padding: 0.4rem 2rem;
+        border-radius: 5px;
+        border:none;
+        background: #140C29;
+        color:white;
+        &:last-child{
+          background: #E32121;
+        }
+
+      }
+    }
+  }
+}

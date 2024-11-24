@@ -1,5 +1,4 @@
-<section class="">
-
+<section >
     <div class="backgroundgrid">
         <div class="grid"></div>
         <div class="grid"></div>
@@ -14,7 +13,7 @@
     <div class="maincontent">
         <header class="d-flex align-items-center justify-content-center position-relative">
             <button type="button" class="position-absolute">
-                <i class="bi bi-archive"></i>
+                <i class="bi bi-trash"></i>
             </button>
             <p class="mb-0 text-white fs-3">To Do List</p>
         </header>
@@ -48,7 +47,12 @@
                     <div class="divisor"></div>
                     <p>{{ task.time }}</p>
                 </div>
-                <p>{{ task.taskName }}</p>
+                <div class="taskNameAndButton">
+                    <p class="taskname">{{ task.taskName }}</p>
+                    <button class="trash" type="button"  (click)="setModalVisibility(task)">
+                        <i class="bi bi-trash"></i>
+                    </button>
+                </div>
             </div>
         </div>
 
@@ -56,3 +60,4 @@
     </div>
 
 </section>
+<app-modal-delete-confirmation *ngIf="modalDefaultVisibility"></app-modal-delete-confirmation>

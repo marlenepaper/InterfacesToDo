@@ -7,13 +7,15 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
 import {FormsModule} from "@angular/forms";
+import { ModalDeleteConfirmationComponent } from './modal-delete-confirmation/modal-delete-confirmation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     HomeComponent,
-    CreateTaskComponent
+    CreateTaskComponent,
+    ModalDeleteConfirmationComponent
   ],
     imports: [
         BrowserModule,
