@@ -7,7 +7,7 @@
         <p>Are you sure?</p>
         <div>
             <button type="button" (click)="setModalVisibility()">Cancel</button>
-            <button type="button">Delete</button>
+            <button type="button" (click)="deleteTask(task?.id)">Delete</button>
         </div>
     </div>
 </section>

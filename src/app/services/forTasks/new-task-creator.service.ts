@@ -34,5 +34,9 @@ export class NewTaskCreatorService {
     return this.tasks;
   }
 
+  deleteTask(taskId: number | undefined): void {
+    this.tasks = this.tasks.filter(task => task.id !== taskId);
+    localStorage.setItem('tasks', JSON.stringify(this.tasks));
+  }
 
 }

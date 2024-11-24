@@ -41,6 +41,4 @@ export class HomeComponent {
         this.modalDataAssignService.setModalDataAssign(data);
         this.modalVisibilityService.modalVisibilitySubject.next(true);
     }
-
-
 }
