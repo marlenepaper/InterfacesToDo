@@ -13,7 +13,7 @@ export class ModalDataAssignService {
   constructor() { }
 
   setModalDataAssign(data: Task |null){
-    console.log("inicial ", data);
+    // console.log("inicial ", data);
     this.modalDataAssignSubject.next(data);
   }
 }

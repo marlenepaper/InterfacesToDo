@@ -28,7 +28,6 @@ export class ModalDeleteConfirmationComponent {
 
   ngOnInit() {
     this.modalDataAssignService.modalDataAssign$.subscribe(data => {
-      console.log(data);
       this.task =data;
     });
   }
