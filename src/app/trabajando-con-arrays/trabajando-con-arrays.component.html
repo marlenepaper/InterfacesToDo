@@ -1,0 +1,22 @@
+<form [formGroup]="formulario" (submit)="addPersona()" class="w-75 m-auto mt-4 py-3 px-3 rounded-3 shadow-sm row justify-content-center row-gap-3 text-white">
+    <div class="col-11">
+        <input formControlName="nombre" type="text" placeholder="nombre">
+    </div>
+    <div class="col-11">
+        <input formControlName="edad" type="text" placeholder="edad">
+    </div>
+    <div class="text-end bg-white text-black">
+        <button type="submit" class="btn btn primary">Añadir</button>
+    </div>
+
+</form>
+
+<div class="row justify-content-around gap-3">
+    <div class="col-4 rounded-3 shadow-sm py-4 px-3" *ngFor="let persona of personas">
+        <p class="mb-2 text-white">nombre: </p>
+        <p class="small text-white mb-4 fw-bold">{{ persona.nombre }} </p>
+
+        <p class="mb-2 text-white">edad: </p>
+        <p class="small  text-white mb-0 fw-bold">{{ persona.edad }} </p>
+    </div>
+</div>

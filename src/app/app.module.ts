@@ -6,8 +6,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { CreateTaskComponent } from './create-task/create-task.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { ModalDeleteConfirmationComponent } from './modal-delete-confirmation/modal-delete-confirmation.component';
+import { BotonFlotanteComponent } from './boton-flotante/boton-flotante.component';
+import { ListaTareasExamenComponent } from './lista-tareas-examen/lista-tareas-examen.component';
+import { DetallesTareaExamenComponent } from './detalles-tarea-examen/detalles-tarea-examen.component';
+import { TrabajandoConArraysComponent } from './trabajando-con-arrays/trabajando-con-arrays.component';
 
 @NgModule({
   declarations: [
@@ -15,12 +19,17 @@ import { ModalDeleteConfirmationComponent } from './modal-delete-confirmation/mo
     LoginComponent,
     HomeComponent,
     CreateTaskComponent,
-    ModalDeleteConfirmationComponent
+    ModalDeleteConfirmationComponent,
+    BotonFlotanteComponent,
+    ListaTareasExamenComponent,
+    DetallesTareaExamenComponent,
+    TrabajandoConArraysComponent
   ],
     imports: [
         BrowserModule,
         AppRoutingModule,
         NgbModule,
+        ReactiveFormsModule,
         FormsModule
     ],
   providers: [],

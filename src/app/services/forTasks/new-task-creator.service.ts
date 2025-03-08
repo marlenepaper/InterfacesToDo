@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {Task} from "../interfaces/task";
 import {NewTask} from "../interfaces/new-task";
+import {BehaviorSubject, Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -8,6 +9,8 @@ import {NewTask} from "../interfaces/new-task";
 export class NewTaskCreatorService {
 
   tasks: Task[] = [];
+  modalDataAssignSubject:BehaviorSubject<Task | null>=new BehaviorSubject<Task | null>(null);
+  modalDataAssign$:Observable <Task | null>=this.modalDataAssignSubject.asObservable();
 
   constructor() { }
 

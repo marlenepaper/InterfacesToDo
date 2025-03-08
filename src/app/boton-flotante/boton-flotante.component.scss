@@ -1,0 +1,25 @@
+section{
+  position:fixed;
+  bottom:0;
+  left:0;
+  z-index:999;
+  width:100%;
+  height:7%;
+  display:flex;
+  align-items:flex-end;
+  justify-content:flex-end;
+  padding:0.8rem 8.8rem;
+
+  .boton-examen{
+    border-radius: 100%;
+    padding: 0.2em 0.55em;
+    color: white;
+    border: none;
+    background: linear-gradient(180deg, #7E64FF 0%, #241641 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  }
+  .boton-examen:hover {
+    opacity: 0.8;
+    scale: 0.98;
+  }
+}

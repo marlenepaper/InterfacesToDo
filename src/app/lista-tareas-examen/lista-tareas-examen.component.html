@@ -1,0 +1,35 @@
+<section >
+    <h1 class="text-white my-5 mb-0">Lista de Tareas</h1>
+    <div class="formulario" >
+        <p class="text-white">Filtro de tareas por estado:</p>
+        <form [formGroup]="formulario" (submit)="enviarEstado()">
+            <label class="text-white">Estado</label>
+            <select formControlName="estado" class="mx-3" >
+                <option>-</option>
+                <option>Todas</option>
+                <option>Pendiente</option>
+                <option>Finalizado</option>
+            </select>
+            <button type="submit">filtrar</button>
+        </form>
+        <div class="limite"></div>
+    </div>
+
+    <div class="contenedor-principal">
+        <div class="contenedor-tareas" *ngIf="examenTareas.length > 0">
+            <div class="tarea" *ngFor="let examenTarea of examenTareas">
+                <div *ngIf="estado=='todos' || estado == '' || estado == examenTarea.estado">
+                    <p class="mb-0">{{ examenTarea.nombreTarea }}</p>
+                    <p class="mb-0">{{ examenTarea.estado }}</p>
+                    <button type="button" (click)="navegationBetweenComponents(examenTarea)">Ver mas</button>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<app-boton-flotante></app-boton-flotante>
